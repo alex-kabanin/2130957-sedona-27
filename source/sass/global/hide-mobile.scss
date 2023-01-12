@@ -1,7 +1,0 @@
-@use "../global/variables";
-
-.hide-mobile {
-  @media (max-width: 767px) {
-    display: none;
-  }
-}
