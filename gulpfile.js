@@ -12,6 +12,7 @@ import svgstore from 'gulp-svgstore';
 import svgo from 'gulp-svgo';
 import {deleteAsync as del} from 'del';
 import browser from 'browser-sync';
+import ghPages from 'gulp-gh-pages';
 
 // Styles
 
@@ -104,6 +105,13 @@ const copy = (done) => {
 const clean = () => {
   return del('build');
 };
+
+// Deploy
+
+gulp.task('deploy', function() {
+  return gulp.src('build')
+    .pipe(ghPages());
+});
 
 // Server
 
